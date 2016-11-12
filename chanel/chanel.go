@@ -34,7 +34,7 @@ func (c *Channel) Consume() {
 	forever := make(chan bool)
 	for i := 1; i <= config.NumberJobConcurrent; i++ {
 		utils.LogInfo("Job worker", i, "started")
-		go c.Helper.MakeConsumeWithTag(JobQueueName, strconv.Itoa(i), c.JobChanel, service.JobHandler)
+		c.Helper.MakeConsumeWithTag(JobQueueName, strconv.Itoa(i), c.JobChanel, service.JobHandler)
 	}
 	<-forever
 }
