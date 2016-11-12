@@ -1,0 +1,14 @@
+# Build
+job
+
+# OS File
+.DS_Store
+
+# Logs
+log/*
+
+# Tmp
+tmp/*
+
+# Constants
+config.go
